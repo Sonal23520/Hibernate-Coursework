@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="405.0" prefWidth="609.0" styleClass="background" stylesheets="@../css/hbox.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+   <children>
+      <AnchorPane prefHeight="405.0" prefWidth="192.0" styleClass="side" stylesheets="@../css/hbox.css">
+         <children>
+            <Label layoutX="45.0" layoutY="177.0" text="Royal" textFill="WHITE">
+               <font>
+                  <Font name="Inconsolata Semi Condensed Black" size="46.0" />
+               </font>
+            </Label>
+            <Label layoutX="97.0" layoutY="228.0" text="Institute" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="98.0" fitWidth="84.0" layoutX="354.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts/person-icon.png" />
+         </image>
+      </ImageView>
+      <VBox alignment="CENTER" layoutX="261.0" layoutY="203.0" prefHeight="115.0" prefWidth="270.0" spacing="6.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="40.0" prefWidth="305.0" styleClass="hobx" stylesheets="@../css/hbox.css">
+               <children>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../asserts/icons8-change-user-26.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="textusername" onKeyPressed="#lblReset" prefHeight="30.0" prefWidth="200.0" promptText="Username" />
+                  <Label prefHeight="22.0" prefWidth="22.0" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="36.0" prefWidth="313.0" styleClass="hobx" stylesheets="@../css/hbox.css">
+               <children>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asserts/icons8-key-24.png" />
+                     </image>
+                  </ImageView>
+                  <PasswordField fx:id="txtpassword" onAction="#login" onKeyPressed="#lblReset" prefHeight="30.0" prefWidth="200.0" promptText="Password" styleClass="text-field" />
+                  <ImageView fitHeight="22.0" fitWidth="22.0" onMousePressed="#eyeON" onMouseReleased="#eyeOff" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asserts/icons8-eye-24.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="33.0" prefWidth="313.0">
+               <children>
+                  <JFXButton fx:id="btnlogin" buttonType="RAISED" onAction="#login" prefHeight="28.0" prefWidth="62.0" styleClass="login-button" stylesheets="@../css/Login.css" text="Login">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></JFXButton>
+               </children>
+            </HBox>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+      <Label layoutX="365.0" layoutY="136.0" text="Login">
+         <font>
+            <Font name="Inconsolata Extra Condensed Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblmessage" alignment="CENTER" layoutX="278.0" layoutY="323.0" prefHeight="18.0" prefWidth="234.0" style="-fx-text-fill: #e74c3c;" textFill="RED">
+         <font>
+            <Font name="Inconsolata Semi Condensed ExtraBold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="show" layoutX="295.0" layoutY="249.0" onMousePressed="#eyeON" onMouseReleased="#eyeOff" prefHeight="30.0" prefWidth="200.0" visible="false">
+         <font>
+            <Font name="Inconsolata Expanded" size="16.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>
