@@ -93,5 +93,17 @@
             <Font name="Inconsolata Expanded" size="16.0" />
          </font>
       </TextField>
+      <AnchorPane layoutX="575.0" layoutY="2.0" prefHeight="28.0" prefWidth="29.0">
+         <children>
+            <ImageView fx:id="imgClose" fitHeight="28.0" fitWidth="25.0" layoutX="3.0" layoutY="3.0" nodeOrientation="INHERIT" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icons8-macos-close-48.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

@@ -1,0 +1,34 @@
+.pane{
+    -fx-background-color: linear-gradient(to left,#80bfbf,white);
+    /*-fx-background-radius: 20px;*/
+    /*-fx-border-radius: 20px;*/
+}
+.dash{
+    -fx-border-color: #8d8d8d;
+    -fx-border-radius: 20px;
+    -fx-background-color:#ecf0f1;
+    -fx-background-radius: 20px;
+}
+.dash:hover{
+    -fx-background-color: linear-gradient(to right, #a1dcdc, #a7a7e5);
+}
+.text{
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-background-color:#ecf0f1;
+    -fx-border-color: #dedede;
+}
+.text_1{
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-background-color: #ecf0f1;
+}
+
+.button{
+    -fx-background-color: #e74c3c;
+    -fx-background-radius: 6px;
+    -fx-text-fill: white;
+}
+.button:hover{
+    -fx-background-color:#c0392b;
+}
