@@ -23,7 +23,6 @@ public class CourseDaoImpl implements CourseDao {
         transaction.commit();
         session.close();
         return (transaction.getStatus().toString()=="COMMITTED")?true:false;
-
     }
 
     @Override

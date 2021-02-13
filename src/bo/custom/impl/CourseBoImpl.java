@@ -3,6 +3,7 @@ package bo.custom.impl;
 import bo.custom.CourseBo;
 import dao.DaoFactory;
 import dao.custom.CourseDao;
+import dao.custom.QueryDAO;
 import dto.CourseDto;
 import entity.Course;
 
@@ -10,7 +11,7 @@ import java.util.ArrayList;
 
 public class CourseBoImpl implements CourseBo {
     CourseDao courseDao=DaoFactory.getInstance().getDao(DaoFactory.DaoType.COURSE);
-
+    QueryDAO queryDAO=DaoFactory.getInstance().getDao(DaoFactory.DaoType.QUERY);
     @Override
     public boolean save(CourseDto courseDto) throws Exception {
         return courseDao.save(new Course(courseDto.getId(),courseDto.getName()
@@ -43,5 +44,10 @@ public class CourseBoImpl implements CourseBo {
             dto.add(new CourseDto(course.getId(),course.getName(),course.getType(),course.getDuration()));
         }
         return dto;
+    }
+    public CourseDto gernarateId() throws Exception {
+        Course lastCourse = queryDAO.getLastCourse();
+        return new CourseDto(lastCourse.getId(),lastCourse.getName(),lastCourse.getType(),lastCourse.getDuration());
+
     }
 }
