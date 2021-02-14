@@ -1,7 +1,10 @@
 package entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Entity
 public class Course implements SuperEntity{
@@ -10,15 +13,21 @@ public class Course implements SuperEntity{
     private String name;
     private String type;
     private String duration;
-
-    public Course() {
-    }
+    @OneToMany(mappedBy = "course",cascade = CascadeType.ALL)
+    private List<Registration>registrations;
 
     public Course(String id, String name, String type, String duration) {
+        this.setId(id);
+        this.setName(name);
+        this.setType(type);
+        this.setDuration(duration);
+    }
+
+    public Course(String id) {
         this.id = id;
-        this.name = name;
-        this.type = type;
-        this.duration = duration;
+    }
+
+    public Course() {
     }
 
     public String getId() {
@@ -56,10 +65,11 @@ public class Course implements SuperEntity{
     @Override
     public String toString() {
         return "Course{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", type='" + type + '\'' +
-                ", duration='" + duration + '\'' +
+                "id='" + getId() + '\'' +
+                ", name='" + getName() + '\'' +
+                ", type='" + getType() + '\'' +
+                ", duration='" + getDuration() + '\'' +
                 '}';
     }
+
 }

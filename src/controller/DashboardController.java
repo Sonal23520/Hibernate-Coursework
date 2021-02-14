@@ -11,6 +11,7 @@ import java.io.IOException;
 public class DashboardController {
     public ImageView imgClose;
     public AnchorPane pnCourse;
+    public AnchorPane pnStudent;
 
     public void close(MouseEvent mouseEvent) {
       close();
@@ -23,5 +24,10 @@ public class DashboardController {
     void close(){
         Stage stage= (Stage) imgClose.getScene().getWindow();
         stage.close();
+    }
+
+    public void student(MouseEvent mouseEvent) throws IOException {
+        SetUi.setUi("/view/Student.fxml");
+        close();
     }
 }

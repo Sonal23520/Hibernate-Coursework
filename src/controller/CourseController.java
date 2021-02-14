@@ -173,9 +173,13 @@ public class CourseController implements Initializable {
             JFXButton delete = new JFXButton("Delete");
             delete.setOnAction((e)->{
                 try {
-                    courseBo.delete(courseDto.getId());
-                    tableLoad();
-                    genarateId();
+                    Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Delete You Sure?", ButtonType.YES, ButtonType.NO, ButtonType.CANCEL);
+                    alert.showAndWait();
+                    if (alert.getResult() == ButtonType.YES) {
+                        courseBo.delete(courseDto.getId());
+                        tableLoad();
+                        genarateId();
+                    }
                 } catch (Exception exception) {
                     exception.printStackTrace();
                 }
@@ -186,15 +190,20 @@ public class CourseController implements Initializable {
         table.setItems(courseTm);
     }
     void genarateId() throws Exception {
-        CourseDto courseDto = courseBo.gernarateId();
-        String[] cs = courseDto.getId().split("C");
-        int count =Integer.parseInt(cs[1]);
-        if (count>=99){
-            lblId.setText("C"+(count+1));
-        }else if(count>=9){
-            lblId.setText("C0"+(count+1));
+        ArrayList<CourseDto> all = courseBo.getAll();
+        if (all.size()==0){
+            lblId.setText("C001");
         }else {
-            lblId.setText("C00"+(count+1));
+            CourseDto courseDto = courseBo.gernarateId();
+            String[] cs = courseDto.getId().split("C");
+            int count = Integer.parseInt(cs[1]);
+            if (count >= 99) {
+                lblId.setText("C" + (count + 1));
+            } else if (count >= 9) {
+                lblId.setText("C0" + (count + 1));
+            } else {
+                lblId.setText("C00" + (count + 1));
+            }
         }
     }
 }

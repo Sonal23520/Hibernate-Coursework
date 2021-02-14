@@ -2,6 +2,8 @@ package bo;
 
 import bo.custom.impl.CourseBoImpl;
 import bo.custom.impl.LoginBoImpl;
+import bo.custom.impl.RegistrationBoImpl;
+import bo.custom.impl.StudentBoImpl;
 
 public class BoFactory {
 
@@ -17,7 +19,7 @@ public class BoFactory {
         return boFactoryInstance;
     }
     public enum BoType{
-        LOGIN,COURSE
+        LOGIN,COURSE,STUDENT,REGISTRATION
     }
     public <T extends SuperBO> T getBo(BoType boType){
         switch (boType){
@@ -25,6 +27,10 @@ public class BoFactory {
                 return (T) new LoginBoImpl();
             case COURSE:
                 return (T) new CourseBoImpl();
+            case STUDENT:
+                return (T) new StudentBoImpl();
+            case REGISTRATION:
+                return (T) new RegistrationBoImpl();
             default:
                 return null;
         }

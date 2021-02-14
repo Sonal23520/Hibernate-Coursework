@@ -1,6 +1,8 @@
 package dto;
 
 
+import java.time.LocalDate;
+
 public class CourseDto {
     private String id;
     private String name;
@@ -8,6 +10,7 @@ public class CourseDto {
     private String duration;
 
     public CourseDto() {
+
     }
 
     public CourseDto(String id, String name, String type, String duration) {
@@ -16,6 +19,8 @@ public class CourseDto {
         this.type = type;
         this.duration = duration;
     }
+
+
 
     public String getId() {
         return id;
@@ -52,10 +57,10 @@ public class CourseDto {
     @Override
     public String toString() {
         return "CourseDto{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", type='" + type + '\'' +
-                ", duration='" + duration + '\'' +
+                "id='" + getId() + '\'' +
+                ", name='" + getName() + '\'' +
+                ", type='" + getType() + '\'' +
+                ", duration='" + getDuration() + '\'' +
                 '}';
     }
 }

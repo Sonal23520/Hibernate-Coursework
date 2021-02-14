@@ -1,8 +1,6 @@
 package dao;
 
-import dao.custom.impl.CourseDaoImpl;
-import dao.custom.impl.LoginDaoImpl;
-import dao.custom.impl.QueryDaoImpl;
+import dao.custom.impl.*;
 
 public class DaoFactory {
     private static DaoFactory daoFactory;
@@ -11,7 +9,7 @@ public class DaoFactory {
         return (daoFactory==null)?daoFactory=new DaoFactory():daoFactory;
     }
     public enum DaoType {
-    LOGIN,QUERY,COURSE
+    LOGIN,QUERY,COURSE,STUDENT,REGISTRATION
     }
     public <T extends SuperDAO> T getDao(DaoType daoType){
         switch (daoType){
@@ -21,6 +19,10 @@ public class DaoFactory {
                 return (T) new QueryDaoImpl();
             case COURSE:
                 return (T) new CourseDaoImpl();
+            case STUDENT:
+                return (T) new StudentDaoImpl();
+            case REGISTRATION:
+                return (T) new RegistrationDaoImpl();
             default:
                 return null;
         }

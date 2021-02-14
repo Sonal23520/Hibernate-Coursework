@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="483.0" prefWidth="836.0" styleClass="pane" stylesheets="@../css/pallet.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StudentController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Studnet">
+         <font>
+            <Font name="Inconsolata Condensed" size="26.0" />
+         </font>
+      </Label>
+      <Separator layoutX="14.0" layoutY="43.0" prefWidth="200.0" />
+      <ImageView fx:id="imgClose" fitHeight="26.0" fitWidth="28.0" layoutX="801.0" layoutY="10.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts/icons8-macos-close-48.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgHome" fitHeight="36.0" fitWidth="27.0" layoutX="763.0" layoutY="7.0" onMouseClicked="#home" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts/icons8-home-208.png" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="txtname" labelFloat="true" layoutX="99.0" layoutY="59.0" promptText="Student Name" />
+      <Label layoutX="14.0" layoutY="65.0" text="ID :">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblId" layoutX="48.0" layoutY="65.0" text="S001" textFill="RED">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtaddress" labelFloat="true" layoutX="268.0" layoutY="59.0" prefHeight="26.0" prefWidth="136.0" promptText="Student Address" />
+      <JFXTextField fx:id="txtcontact" labelFloat="true" layoutX="421.0" layoutY="59.0" prefHeight="26.0" prefWidth="136.0" promptText="Student Contact" />
+      <JFXDatePicker fx:id="dtdob" layoutX="574.0" layoutY="55.0" prefHeight="29.0" prefWidth="120.0" promptText="DOB" />
+      <JFXComboBox fx:id="cmdgender" labelFloat="true" layoutX="701.0" layoutY="59.0" prefHeight="26.0" prefWidth="114.0" promptText="Gender" />
+      <TableView fx:id="table" layoutX="11.0" layoutY="125.0" prefHeight="348.0" prefWidth="816.0" stylesheets="@../css/table.css">
+        <columns>
+          <TableColumn fx:id="colid" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="colname" prefWidth="119.0" text="Name" />
+            <TableColumn fx:id="coladdress" prefWidth="148.0" text="Address" />
+            <TableColumn fx:id="colcontact" prefWidth="111.0" text="Contact" />
+            <TableColumn fx:id="coldob" prefWidth="145.0" text="DOB" />
+            <TableColumn fx:id="colgender" prefWidth="94.0" text="Gender" />
+            <TableColumn fx:id="coloperation" prefWidth="121.0" text="Operation" />
+        </columns>
+      </TableView>
+      <JFXButton fx:id="btnadd" buttonType="RAISED" layoutX="563.0" layoutY="94.0" onAction="#add" prefHeight="26.0" prefWidth="73.0" styleClass="buttonn" stylesheets="@../css/button.css" text="add" />
+      <JFXButton fx:id="btnnew" buttonType="RAISED" layoutX="670.0" layoutY="10.0" onAction="#newOnAction" prefHeight="26.0" prefWidth="73.0" text="New">
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/icons8-plus-26.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <TextField fx:id="txtsearch" layoutX="651.0" layoutY="93.0" onAction="#search" promptText="Search" styleClass="text" stylesheets="@../css/Login.css" />
+   </children>
+</AnchorPane>
