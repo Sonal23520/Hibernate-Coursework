@@ -12,6 +12,7 @@ public class DashboardController {
     public ImageView imgClose;
     public AnchorPane pnCourse;
     public AnchorPane pnStudent;
+    public AnchorPane pnreg;
 
     public void close(MouseEvent mouseEvent) {
       close();
@@ -28,6 +29,11 @@ public class DashboardController {
 
     public void student(MouseEvent mouseEvent) throws IOException {
         SetUi.setUi("/view/Student.fxml");
+        close();
+    }
+
+    public void reg(MouseEvent mouseEvent) throws IOException {
+        SetUi.setUi("/view/Registration.fxml");
         close();
     }
 }
