@@ -111,7 +111,20 @@ public class CourseController implements Initializable {
 
     @FXML
     void add(ActionEvent event) throws Exception {
-
+        ///////VALIDATION//////
+            if (txtName.getText().isEmpty()){
+                Notification.conformation("please fill course fields");
+                txtName.requestFocus();
+                return;
+            }else if (txtType.getText().isEmpty()){
+                Notification.conformation("please fill course type fields");
+                txtType.requestFocus();
+                return;
+            }else if(txtDuration.getText().isEmpty()){
+                Notification.conformation("please fill course duration fields");
+                txtDuration.requestFocus();
+                return;
+            }
         ArrayList<CourseDto> all = courseBo.getAll();
         for (CourseDto courseDto : all) {
             if (lblId.getText().equals(courseDto.getId())){

@@ -16,6 +16,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import model.StudentTM;
 import util.Notification;
@@ -91,6 +92,33 @@ public class StudentController implements Initializable {
     ObservableList<String> gender = FXCollections.observableArrayList("Male","Female");
     @FXML
     void add(ActionEvent event) throws Exception {
+        //////VALIDATION////////
+        if (txtname.getText().isEmpty()){
+            Notification.conformation("please fill username fields");
+//            txtname.setFocusColor(Paint.valueOf("red"));
+            txtname.requestFocus();
+            return;
+        }else if(txtaddress.getText().isEmpty()){
+            Notification.conformation("please fill address fields");
+//            txtaddress.setFocusColor(Paint.valueOf("red"));
+            txtaddress.requestFocus();
+            return;
+        }else if(txtcontact.getText().isEmpty()){
+            Notification.conformation("please fill contact fields");
+//            txtcontact.setFocusColor(Paint.valueOf("red"));
+            txtcontact.requestFocus();
+            return;
+        }else if (dtdob.getEditor().getText().isEmpty()){
+            Notification.conformation("please select date of birth");
+//            dtdob.setStyle("-fx-background-color: #e74c3c");
+            dtdob.requestFocus();
+            return;
+        }else if(cmdgender.getSelectionModel().isEmpty()){
+            Notification.conformation("please fill gender");
+//            cmdgender.setStyle("-fx-background-color: #e74c3c");
+            cmdgender.requestFocus();
+            return;
+        }
         ArrayList<StudentDto> all = studentBo.getAll();
         for (StudentDto studentDto : all) {
             if (lblId.getText().equals(studentDto.getId())){

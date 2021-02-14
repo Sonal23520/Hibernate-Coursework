@@ -105,5 +105,7 @@
             </ImageView>
          </children>
       </AnchorPane>
+      <Label layoutX="215.0" layoutY="341.0" text="Username : sonal" />
+      <Label layoutX="215.0" layoutY="361.0" text="Password : 1234" />
    </children>
 </AnchorPane>

@@ -136,6 +136,19 @@ public class RegistrationController implements Initializable {
 
     @FXML
     void register(ActionEvent event) throws Exception {
+        if (cmbstudentid.getSelectionModel().isEmpty() && cmbstudentid.getValue()==null){
+            Notification.conformation("please syudent id");
+            cmbstudentid.requestFocus();
+            return;
+        }else if(cmbcourseid.getSelectionModel().isEmpty() && cmbcourseid.getValue()==null){
+            Notification.conformation("please fill course id");
+            cmbcourseid.requestFocus();
+            return;
+        }else if(txtfee.getText().isEmpty()){
+            Notification.conformation("please fill registration fee fields");
+            txtfee.requestFocus();
+            return;
+        }
         ArrayList<RegistrationDto> all = registrationBo.getAll();
         for (RegistrationDto registrationDto : all) {
             if (lblregid.getText().equals(String.valueOf(registrationDto.getRegno()))){
