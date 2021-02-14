@@ -138,7 +138,7 @@ public class RegistrationController implements Initializable {
     void register(ActionEvent event) throws Exception {
         ArrayList<RegistrationDto> all = registrationBo.getAll();
         for (RegistrationDto registrationDto : all) {
-            if (lblregid.getText().equals(registrationDto.getRegno())){
+            if (lblregid.getText().equals(String.valueOf(registrationDto.getRegno()))){
                 boolean update = registrationBo.update(new RegistrationDto(Integer.parseInt(lblregid.getText())
                         ,lbldate.getText(),Double.parseDouble(txtfee.getText())
                         ,new Student(cmbstudentid.getValue().toString()),new Course(cmbcourseid.getValue().toString())));
@@ -167,8 +167,8 @@ public class RegistrationController implements Initializable {
     }
     void clear(){
         lblregid.setText(" ");
-        cmbstudentid.setValue("Student ID");
-        cmbcourseid.setValue("Course ID");
+        cmbstudentid.setValue(" ");
+        cmbcourseid.setValue(" ");
         txtfee.clear();
     }
     void genarateId() throws Exception {

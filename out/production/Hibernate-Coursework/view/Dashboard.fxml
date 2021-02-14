@@ -63,14 +63,14 @@
             </DropShadow>
          </effect>
       </AnchorPane>
-      <AnchorPane layoutX="529.0" layoutY="54.0" prefHeight="236.0" prefWidth="200.0" styleClass="dash">
+      <AnchorPane fx:id="pnreg" layoutX="529.0" layoutY="54.0" onMouseClicked="#reg" prefHeight="236.0" prefWidth="200.0" styleClass="dash">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="29.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="25.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../asserts/icons8-view-512.png" />
+                  <Image url="@../asserts/registration.png" />
                </image>
             </ImageView>
-            <Label layoutX="76.0" layoutY="174.0" text="View">
+            <Label layoutX="28.0" layoutY="174.0" text="Registration">
                <font>
                   <Font name="Inconsolata Condensed" size="30.0" />
                </font>

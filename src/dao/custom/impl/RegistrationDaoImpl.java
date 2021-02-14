@@ -29,7 +29,7 @@ public class RegistrationDaoImpl implements RegistrationDao {
     public boolean update(Registration entity) throws Exception {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
-        session.save(entity);
+        session.update(entity);
         transaction.commit();
         session.close();
         return (transaction.getStatus().toString()=="COMMITTED")?true:false;
